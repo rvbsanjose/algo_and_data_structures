@@ -1,10 +1,10 @@
 /*
-	Using a Stack data structure, create a method balancedParenthesis that returns a boolean value
+	Using a Stack data structure, create a method balancedSymbols that returns a boolean value
 	for the string being passed in.
 
 	For example
-		1. balancedParenthesis('((()))') returns true
-		2. balancedParenthesis('(()') returns false
+		1. balancedSymbols('{{([][])}()}') returns true
+		2. balancedSymbols('[{()]') returns false
 */
 
 var Stack = function () {
@@ -36,13 +36,18 @@ Stack.prototype.pop = function () {
 	return value;
 };
 
-var balancedParenthesis = function (str) {
+var balancedSymbols = function (str) {
+	var matches = { '{': '}', '(': ')', '[': ']' };
 	var stack = new Stack();
 	for (var i = 0; i < str.length; i++) {
 		var current = str[i];
-		if (current === '(') stack.push(current);
-		if (current === ')') stack.pop();
+		if (matches[current])
+			stack.push(current);
+		else {
+			var popped = stack.pop();
+			if (matches[popped] !== current) return false;
+		}
 	}
 
-	return stack.isEmpty() ? true : false;
+	return true;
 };
