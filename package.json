@@ -1,0 +1,23 @@
+{
+  "name": "algo_and_data_structures",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha spec/specs.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rvbsanjose/algo_and_data_structures.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rvbsanjose/algo_and_data_structures/issues"
+  },
+  "homepage": "https://github.com/rvbsanjose/algo_and_data_structures",
+  "dependencies": {
+    "chai": "^1.10.0",
+    "mocha": "^2.1.0"
+  }
+}
